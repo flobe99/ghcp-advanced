@@ -1,8 +1,8 @@
-duck-emporium/
-.github/.specify
-.github/.vscode
-.github/agents
-specs/
+# # duck-emporium/
+# # .github/.specify
+# # .github/.vscode
+# # .github/agents
+# specs/
 
-.DS_Store
+# .DS_Store
 node_modules/
