@@ -5,3 +5,4 @@ duck-emporium/
 specs/
 
 .DS_Store
+node_modules/
