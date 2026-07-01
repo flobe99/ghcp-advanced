@@ -316,10 +316,29 @@ There are 9 stories. A realistic ~90-120 minute run completes the full applicati
 ```bash
 mkdir duck-emporium && cd duck-emporium
 npm init -y
-npm i -D typescript tsx vitest @types/node
+npm i express
+npm i -D typescript tsx vitest @types/node @types/express
 npx tsc --init
 mkdir -p src specs
 git init && git add -A && git commit -m "scaffold project"
+```
+
+Add a `dev` script to `package.json` so you can start the server at any point:
+
+```json
+{
+  "type": "module",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "test": "vitest"
+  }
+}
+```
+
+Run the server at any time with:
+
+```bash
+npm run dev
 ```
 
 Add a minimal `AGENTS.md` in the `duck-emporium/` folder:
@@ -328,6 +347,7 @@ Add a minimal `AGENTS.md` in the `duck-emporium/` folder:
 # Project: duck-emporium
 - Language: TypeScript (ES modules), Node 20+.
 - Use `node:`-prefixed built-ins.
+- Framework: Express. Entry point is `src/index.ts`. Start with `npm run dev`.
 - Tests live next to source as `*.test.ts`, run with `vitest`.
 - User stories live in `../user-stories/`. Specs go in `specs/<story-id>/`.
 - Never edit `user-stories/**`.
@@ -438,6 +458,14 @@ Then run the next prompts in the loop (each will prompt for `storyId`, and `sdd-
 > **Commit after every passing task.** 
 
 </div>
+
+After story 1 is green, start the server and verify it responds:
+
+```bash
+npm run dev
+```
+
+Open `http://localhost:3000` (or whatever port your spec chose) in the browser or with `curl`. This is your sanity-check before moving to the next story.
 
 When the story is done, move on to story 2 (`duck-detail`), which builds on story 1's foundation.
 
