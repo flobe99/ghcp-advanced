@@ -317,6 +317,7 @@ There are 9 stories. A realistic ~90-120 minute run completes the full applicati
 mkdir duck-emporium && cd duck-emporium
 npm init -y
 npm i -D typescript tsx vitest @types/node
+npm pkg set scripts.start="tsx src/index.ts"
 npx tsc --init
 mkdir -p src specs
 git init && git add -A && git commit -m "scaffold project"
@@ -329,6 +330,7 @@ Add a minimal `AGENTS.md` in the `duck-emporium/` folder:
 - Language: TypeScript (ES modules), Node 20+.
 - Use `node:`-prefixed built-ins.
 - Tests live next to source as `*.test.ts`, run with `vitest`.
+- Run the server with `npm start` (entry point: `src/index.ts`, default port 3000).
 - User stories live in `../user-stories/`. Specs go in `specs/<story-id>/`.
 - Never edit `user-stories/**`.
 - Only edit files under `specs/**` when invoked through an `sdd-*` prompt.
@@ -439,7 +441,14 @@ Then run the next prompts in the loop (each will prompt for `storyId`, and `sdd-
 
 </div>
 
-When the story is done, move on to story 2 (`duck-detail`), which builds on story 1's foundation.
+When story 1's tests are green, start the server and verify it manually before moving on:
+
+```bash
+npm start
+# open http://localhost:3000 in your browser or use curl
+```
+
+Then move on to story 2 (`duck-detail`), which builds on story 1's foundation.
 
 <div class="tip" data-title="Tip">
 
@@ -601,7 +610,11 @@ Chapter 1 covered each of these controls individually. Now we apply them as **co
 ```bash
 git checkout context-engineering-start
 cd duck-emporium
+npm install
+npm start
 ```
+
+Leave the server running in the background. The exercises in this chapter ask the agent to make changes — you can refresh `http://localhost:3000` to verify them immediately.
 
 ## 6.3.1 System prompt & tools
 **Loaded when:** every call (automatic);  
