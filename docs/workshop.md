@@ -316,7 +316,7 @@ There are 9 stories. A realistic ~90-120 minute run completes the full applicati
 ```bash
 mkdir duck-emporium && cd duck-emporium
 npm init -y
-npm i express
+npm i express@^4
 npm i -D typescript tsx vitest @types/node @types/express
 npx tsc --init
 mkdir -p src specs

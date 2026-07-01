@@ -3,19 +3,21 @@ name: start-dev-server
 description: Use when the user asks to start, run, or launch the TypeScript development server. Also use when the user wants to see the app running locally.
 ---
 
-1. Check whether the project has a `dev` script in `package.json`:
+1. Check whether the project has a `dev` script in `package.json`. Read `package.json` and look for a `scripts.dev` entry.
 
-   ```bash
-   npm run dev --if-present
-   ```
+   - If `dev` is defined, run:
 
-   If `npm run dev` is not defined, fall back to running the entry point directly:
+     ```bash
+     npm run dev
+     ```
 
-   ```bash
-   npx tsx src/index.ts
-   ```
+   - If `dev` is not defined, fall back to running the entry point directly:
 
-2. Wait for the server to print its listening address (e.g. `Listening on http://localhost:3000`). If it does not start within 10 seconds, read the error output and report it to the user.
+     ```bash
+     npx tsx src/index.ts
+     ```
+
+2. Wait for the server to print its listening address (e.g. `Listening on http://localhost:3000`). If it does not start within 30 seconds, read the error output and report it to the user.
 
 3. Once the server is running, tell the user:
    - The URL it is listening on (default: `http://localhost:3000`).
