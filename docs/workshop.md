@@ -316,6 +316,7 @@ There are 9 stories. A realistic ~90-120 minute run completes the full applicati
 ```bash
 mkdir duck-emporium && cd duck-emporium
 npm init -y
+npm pkg set type=module
 npm i -D typescript tsx vitest @types/node
 npm pkg set scripts.start="tsx src/index.ts"
 npx tsc --init
@@ -327,7 +328,7 @@ Add a minimal `AGENTS.md` in the `duck-emporium/` folder:
 
 ```markdown
 # Project: duck-emporium
-- Language: TypeScript (ES modules), Node 20+.
+- Language: TypeScript (ES modules), Node 20+. `package.json` has `"type": "module"`.
 - Use `node:`-prefixed built-ins.
 - Tests live next to source as `*.test.ts`, run with `vitest`.
 - Run the server with `npm start` (entry point: `src/index.ts`, default port 3000).
