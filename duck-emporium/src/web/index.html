@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rubber Duck Emporium</title>
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body>
+  <div class="background-shapes" aria-hidden="true">
+    <div class="shape shape-a"></div>
+    <div class="shape shape-b"></div>
+    <div class="shape shape-c"></div>
+  </div>
+
+  <header class="topbar">
+    <div class="brand">
+      <h1>Rubber Duck Emporium</h1>
+      <p>Find your next debugging sidekick.</p>
+    </div>
+    <button id="backButton" class="ghost-button hidden" type="button">Back to catalog</button>
+  </header>
+
+  <main class="layout">
+    <section id="catalogSection" class="panel">
+      <h2>Catalog</h2>
+      <p class="subtle">Browse all available ducks and open details by ID.</p>
+      <article class="duck-of-day">
+        <h3>Duck of the Day</h3>
+        <p id="duckOfDayState" class="state">Loading featured duck...</p>
+        <div id="duckOfDayCard" class="hidden"></div>
+      </article>
+      <form id="catalogFilters" class="catalog-filters">
+        <label>
+          Search text
+          <input id="filterQuery" name="q" type="text" placeholder="philosophical, cloud, brave..." />
+        </label>
+        <div>
+          <span class="filter-label">Categories</span>
+          <div id="categoryFilters" class="category-filters"></div>
+        </div>
+        <div class="price-filter-grid">
+          <label>
+            Min price
+            <input id="minPrice" name="minPrice" type="number" min="0" step="0.01" placeholder="0" />
+          </label>
+          <label>
+            Max price
+            <input id="maxPrice" name="maxPrice" type="number" min="0" step="0.01" placeholder="50" />
+          </label>
+        </div>
+        <div class="filter-actions">
+          <button class="small-button" type="submit">Apply filters</button>
+          <button id="resetFiltersButton" class="small-button" type="button">Reset</button>
+        </div>
+      </form>
+      <div id="catalogState" class="state">Loading catalog...</div>
+      <div id="catalogGrid" class="grid"></div>
+    </section>
+
+    <section id="cartSection" class="panel">
+      <h2>Cart</h2>
+      <p class="subtle">Your session cart is saved via session cookie.</p>
+      <div id="cartState" class="state">Loading cart...</div>
+      <div id="cartItems" class="cart-items"></div>
+      <p id="cartTotal" class="cart-total">Total: $0.00</p>
+      <form id="checkoutForm" class="checkout-form">
+        <h3>Checkout</h3>
+        <label>
+          Shipping name
+          <input id="shippingName" name="shippingName" type="text" required />
+          <span id="shippingNameError" class="field-error" aria-live="polite"></span>
+        </label>
+        <label>
+          Email
+          <input id="email" name="email" type="email" required />
+          <span id="emailError" class="field-error" aria-live="polite"></span>
+        </label>
+        <label>
+          Address
+          <textarea id="address" name="address" rows="2" required></textarea>
+          <span id="addressError" class="field-error" aria-live="polite"></span>
+        </label>
+        <label>
+          Card holder
+          <input id="cardHolder" name="cardHolder" type="text" required />
+          <span id="cardHolderError" class="field-error" aria-live="polite"></span>
+        </label>
+        <div class="checkout-grid">
+          <label>
+            Card number
+            <input id="cardNumber" name="cardNumber" type="text" inputmode="numeric" required />
+            <span id="cardNumberError" class="field-error" aria-live="polite"></span>
+          </label>
+          <label>
+            Expiry (MM/YY)
+            <input id="cardExpiry" name="cardExpiry" type="text" placeholder="12/30" required />
+            <span id="cardExpiryError" class="field-error" aria-live="polite"></span>
+          </label>
+          <label>
+            CVC
+            <input id="cardCvc" name="cardCvc" type="text" inputmode="numeric" required />
+            <span id="cardCvcError" class="field-error" aria-live="polite"></span>
+          </label>
+        </div>
+        <button id="checkoutButton" class="open-link" type="submit">Place order</button>
+        <p id="checkoutState" class="state" aria-live="polite"></p>
+      </form>
+      <article id="checkoutConfirmation" class="checkout-confirmation hidden" aria-live="polite"></article>
+    </section>
+
+    <section id="detailSection" class="panel hidden">
+      <h2>Duck Details</h2>
+      <div id="detailState" class="state">Select a duck from the catalog.</div>
+      <article id="detailCard" class="detail-card hidden"></article>
+    </section>
+
+    <section id="quizSection" class="panel">
+      <h2>Which Duck Are You?</h2>
+      <p class="subtle">Answer a few questions and get your duck recommendation.</p>
+      <div id="quizState" class="state">Loading quiz...</div>
+      <form id="quizForm" class="quiz-form hidden"></form>
+      <article id="quizResult" class="detail-card hidden"></article>
+    </section>
+  </main>
+
+  <script type="module" src="/assets/app.js"></script>
+</body>
+</html>

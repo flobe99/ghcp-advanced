@@ -1,0 +1,156 @@
+[
+    {
+        "id": "duck-001",
+        "name": "Debugger Duck",
+        "category": "Classic",
+        "priceCents": 1299,
+        "tagline": "Finds bugs by staring at them.",
+        "longDescription": "Debugger Duck has spent years in late-night coding sessions and is famous for helping developers explain their problem out loud.",
+        "personalityTraits": [
+            "patient",
+            "observant",
+            "encouraging"
+        ],
+        "stockCount": 6
+    },
+    {
+        "id": "duck-002",
+        "name": "Sprint Duck",
+        "category": "Classic",
+        "priceCents": 1099,
+        "tagline": "Always ready for the next standup.",
+        "longDescription": "Sprint Duck keeps every backlog lively and insists that every sprint goal should include one tiny celebration.",
+        "personalityTraits": [
+            "energetic",
+            "focused",
+            "optimistic"
+        ],
+        "stockCount": 2
+    },
+    {
+        "id": "duck-003",
+        "name": "Captain Quack",
+        "category": "Nautical",
+        "priceCents": 1599,
+        "tagline": "Commands the bathtub fleet.",
+        "longDescription": "Captain Quack navigates rough bubbles and tiny waves with confidence, charting safe routes for every floating companion.",
+        "personalityTraits": [
+            "brave",
+            "strategic",
+            "loyal"
+        ],
+        "stockCount": 5
+    },
+    {
+        "id": "duck-004",
+        "name": "Harbor Hero",
+        "category": "Nautical",
+        "priceCents": 1699,
+        "tagline": "Rescues squeaks in rough waters.",
+        "longDescription": "Harbor Hero patrols stormy tubs, always prepared with a tiny life ring and a reassuring squeak.",
+        "personalityTraits": [
+            "protective",
+            "steady",
+            "kind"
+        ],
+        "stockCount": 0
+    },
+    {
+        "id": "duck-005",
+        "name": "Pixel Quacker",
+        "category": "Tech",
+        "priceCents": 1899,
+        "tagline": "Compiled for maximum squeak speed.",
+        "longDescription": "Pixel Quacker speaks in snippets and shortcuts, but always lands on clean, readable solutions.",
+        "personalityTraits": [
+            "clever",
+            "fast",
+            "curious"
+        ],
+        "stockCount": 4
+    },
+    {
+        "id": "duck-006",
+        "name": "Cloud Floater",
+        "category": "Tech",
+        "priceCents": 1999,
+        "tagline": "Scales horizontally in every tub.",
+        "longDescription": "Cloud Floater loves distributed bath architecture and can replicate calm vibes across every corner of the water.",
+        "personalityTraits": [
+            "adaptable",
+            "calm",
+            "inventive"
+        ],
+        "stockCount": 1
+    },
+    {
+        "id": "duck-007",
+        "name": "Sir Squeakalot",
+        "category": "Royal",
+        "priceCents": 2499,
+        "tagline": "Nobility with a rubbery touch.",
+        "longDescription": "Sir Squeakalot hosts elegant tea parties on floating trays and insists every guest leave with a compliment.",
+        "personalityTraits": [
+            "charming",
+            "gracious",
+            "confident"
+        ],
+        "stockCount": 6
+    },
+    {
+        "id": "duck-008",
+        "name": "Duchess Drift",
+        "category": "Royal",
+        "priceCents": 2399,
+        "tagline": "Glides with aristocratic grace.",
+        "longDescription": "Duchess Drift is known for flawless turns and dramatic entrances, accompanied by a tiny fanfare.",
+        "personalityTraits": [
+            "elegant",
+            "witty",
+            "bold"
+        ],
+        "stockCount": 3
+    },
+    {
+        "id": "duck-009",
+        "name": "Campfire Quack",
+        "category": "Adventure",
+        "priceCents": 1499,
+        "tagline": "Tells splashy stories by moonlight.",
+        "longDescription": "Campfire Quack carries endless legends of hidden waterfalls and mysterious midnight ripples.",
+        "personalityTraits": [
+            "storytelling",
+            "warm",
+            "fearless"
+        ],
+        "stockCount": 2
+    },
+    {
+        "id": "duck-010",
+        "name": "Trailblazer Duck",
+        "category": "Adventure",
+        "priceCents": 1799,
+        "tagline": "Leaves tiny ripples everywhere.",
+        "longDescription": "Trailblazer Duck maps new routes through foam and mist, always returning with a new path for others.",
+        "personalityTraits": [
+            "determined",
+            "resourceful",
+            "curious"
+        ],
+        "stockCount": 9
+    },
+    {
+        "id": "duck-011",
+        "name": "Kavo Zahn Quack",
+        "category": "Tech",
+        "priceCents": 2099,
+        "tagline": "Brings precision to every squeak.",
+        "longDescription": "Kavo Zahn Quack keeps every bath-time operation on schedule, combining meticulous focus with a friendly bedside squeak.",
+        "personalityTraits": [
+            "precise",
+            "friendly",
+            "reliable"
+        ],
+        "stockCount": 5
+    }
+]

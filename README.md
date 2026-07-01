@@ -39,3 +39,83 @@ Inspired by the excellent [GitHub Copilot HoL by @Philess](https://moaw.dev/work
 - add spec-kit for app mod section
 - add squad section
 - save the world
+
+
+# Copilot Ansatz
+In GitHub Copilot arbeiten drei Bausteine zusammen:
+
+- **Agents**
+- **Prompts**
+- **Skills**
+
+Kurzfassung:
+
+- **Agent** = Wie Copilot arbeitet (Verhalten, Grenzen, Tool-Nutzung)
+- **Prompt** = Was Copilot in einem konkreten Schritt erledigen soll
+- **Skill** = Wiederverwendbare Anleitung für wiederkehrende Aufgaben
+
+## Was ist was?
+
+### 1. Agents
+Agents sind der Ausfuehrungsmodus von Copilot. Sie bestimmen, wie Copilot vorgeht: eher analysierend, umsetzend oder z. B. testfokussiert.
+
+Im Repository steuerst du das vor allem ueber Instruktionen:
+
+- globale Regeln in `.github/copilot-instructions.md`
+- bereichsspezifische Regeln in `duck-emporium/AGENTS.md`
+
+Beispiel aus diesem Repo:
+
+- `duck-emporium/AGENTS.md` verbietet Aenderungen an `user-stories/**`
+- Specs in `specs/**` sollen nur im SDD-Flow angepasst werden
+
+## 2. Prompts
+Prompts sind versionierte Aufgaben-Templates. Sie definieren Ziel, Eingaben und Regeln fuer einen klaren Arbeitsschritt.
+
+Bei dir liegen sie in `.github/prompts/`:
+
+- `sdd-spec.prompt.md`
+- `sdd-plan.prompt.md`
+- `sdd-tasks.prompt.md`
+- `sdd-implement.prompt.md`
+- `add-test.prompt.md`
+
+Typischer Nutzen:
+
+- aus einer User Story eine Spec erstellen
+- aus einer Spec einen technischen Plan erstellen
+- aus dem Plan eine Taskliste ableiten
+- genau eine Task implementieren und testen
+
+## 3. Skills
+Skills kapseln wiederkehrende Faehigkeiten als klare Schritt-fuer-Schritt-Anleitungen.
+
+Bei dir liegen sie in `.github/skills/`:
+
+- `run-tests/SKILL.md`
+- `lint-and-typecheck/SKILL.md`
+- `convert-svg-to-png/SKILL.md`
+
+Beispiel:
+
+- Der Skill `run-tests` beschreibt explizit, wie Tests auszufuehren sind und dass fehlschlagende Tests nicht umgangen werden.
+
+## Wie du es in diesem Repository konkret einsetzt
+
+### Empfohlener Ablauf (SDD)
+
+1. Waehl eine Story aus `user-stories/`.
+2. Starte mit `sdd-spec.prompt.md` und erstelle `specs/<story-id>/spec.md`.
+3. Fuehre `sdd-plan.prompt.md` aus und erstelle `specs/<story-id>/plan.md`.
+4. Erzeuge mit `sdd-tasks.prompt.md` eine umsetzbare Taskliste in `specs/<story-id>/tasks.md`.
+5. Implementiere je Durchlauf genau eine Task mit `sdd-implement.prompt.md`.
+6. Nutze Skills wie `run-tests` und `lint-and-typecheck`, um Qualitaet verbindlich zu pruefen.
+
+### Best Practices fuer Teamarbeit
+
+- **Regeln einmalig zentral halten**: in `.github/copilot-instructions.md` und `duck-emporium/AGENTS.md`
+- **Ablauf als Prompts standardisieren**: damit jeder denselben Prozess nutzt
+- **Qualitaets-Gates als Skills festlegen**: Tests und Checks werden nicht vergessen
+- **Kleine, reviewbare Schritte**: jede Task sollte einzeln pruefbar und committable sein
+
+So entsteht ein reproduzierbarer Copilot-Workflow: klare Regeln (Agents), klare Arbeitsschritte (Prompts), klare Qualitaetssicherung (Skills).

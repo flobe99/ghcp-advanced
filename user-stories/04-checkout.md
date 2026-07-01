@@ -14,6 +14,7 @@
 ## Acceptance criteria
 
 - Checkout collects a shipping name, email and address, plus mocked card details (any string accepted — this is a workshop, not a payment processor).
+- Payment with card must be possible as part of checkout (mocked card flow only).
 - On submit, the system:
   - Validates required fields (rejects empty/invalid email).
   - Re-validates stock for every line item (rejects checkout if any line item is now out of stock).

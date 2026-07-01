@@ -1,0 +1,19 @@
+[
+    {
+        "orderId": "ord_761e242a-3a05-4ca0-9dd9-25d1882c39dd",
+        "createdAt": "2026-06-30T14:24:24.357Z",
+        "shippingName": "Quincy Quacker",
+        "email": "quincy@example.com",
+        "address": "42 Duck Lake Road",
+        "items": [
+            {
+                "duckId": "duck-001",
+                "name": "Debugger Duck",
+                "priceCents": 1299,
+                "quantity": 1,
+                "lineTotalCents": 1299
+            }
+        ],
+        "totalCents": 1299
+    }
+]
